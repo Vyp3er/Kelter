@@ -1,0 +1,51 @@
+[
+  {
+    "id": "macos-fonts",
+    "name": "Schriftarten (von macOS)",
+    "summary": "Kopiert Arial, Times New Roman, Verdana, Tahoma u. a. aus macOS in die Bottle – ohne Download.",
+    "kind": "macosFonts",
+    "fonts": [
+      "Arial.ttf", "Arial Bold.ttf", "Arial Italic.ttf", "Arial Bold Italic.ttf", "Arial Black.ttf",
+      "Times New Roman.ttf", "Times New Roman Bold.ttf", "Times New Roman Italic.ttf", "Times New Roman Bold Italic.ttf",
+      "Courier New.ttf", "Courier New Bold.ttf", "Courier New Italic.ttf", "Courier New Bold Italic.ttf",
+      "Verdana.ttf", "Verdana Bold.ttf", "Verdana Italic.ttf", "Verdana Bold Italic.ttf",
+      "Georgia.ttf", "Georgia Bold.ttf", "Georgia Italic.ttf", "Georgia Bold Italic.ttf",
+      "Trebuchet MS.ttf", "Trebuchet MS Bold.ttf", "Trebuchet MS Italic.ttf", "Trebuchet MS Bold Italic.ttf",
+      "Tahoma.ttf", "Tahoma Bold.ttf", "Comic Sans MS.ttf", "Comic Sans MS Bold.ttf", "Impact.ttf", "Webdings.ttf", "Wingdings.ttf"
+    ]
+  },
+  {
+    "id": "vcrun2022-x64",
+    "name": "Visual C++ 2015–2022 (64 Bit)",
+    "summary": "Microsofts offizielle Laufzeitbibliothek für 64-Bit-Programme.",
+    "kind": "installer",
+    "url": "https://aka.ms/vs/17/release/vc_redist.x64.exe",
+    "fileName": "VC_redist.x64.exe",
+    "arguments": ["/install", "/quiet", "/norestart"],
+    "successCodes": [0, 1638, 3010],
+    "approximateSize": 25635768,
+    "dllOverrides": {
+      "concrt140": "native,builtin", "msvcp140": "native,builtin", "msvcp140_1": "native,builtin",
+      "msvcp140_2": "native,builtin", "msvcp140_atomic_wait": "native,builtin", "msvcp140_codecvt_ids": "native,builtin",
+      "vcamp140": "native,builtin", "vccorlib140": "native,builtin", "vcomp140": "native,builtin",
+      "vcruntime140": "native,builtin", "vcruntime140_1": "native,builtin"
+    }
+  },
+  {
+    "id": "vcrun2022-x86",
+    "name": "Visual C++ 2015–2022 (32 Bit)",
+    "summary": "Microsofts offizielle Laufzeitbibliothek für 32-Bit-Programme.",
+    "kind": "installer",
+    "url": "https://aka.ms/vs/17/release/vc_redist.x86.exe",
+    "fileName": "VC_redist.x86.exe",
+    "arguments": ["/install", "/quiet", "/norestart"],
+    "successCodes": [0, 1638, 3010],
+    "approximateSize": 13953392,
+    "dllOverrides": {
+      "concrt140": "native,builtin", "msvcp140": "native,builtin", "msvcp140_1": "native,builtin",
+      "msvcp140_2": "native,builtin", "msvcp140_atomic_wait": "native,builtin", "msvcp140_codecvt_ids": "native,builtin",
+      "vcamp140": "native,builtin", "vccorlib140": "native,builtin", "vcomp140": "native,builtin",
+      "vcruntime140": "native,builtin", "vcruntime140_1": "native,builtin"
+    }
+  }
+]

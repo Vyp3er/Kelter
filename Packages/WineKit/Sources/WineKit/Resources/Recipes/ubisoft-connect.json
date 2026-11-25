@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "ubisoft-connect",
+  "name": "Ubisoft Connect",
+  "publisher": "Ubisoft",
+  "category": "Spiele-Plattform",
+  "summary": "Ubisofts Launcher für Windows-Spiele (z. B. Anno, Assassin's Creed).",
+  "description": "Installiert den offiziellen Ubisoft-Connect-Installer (ca. 250 MB) still in eine eigene Bottle. Die Weboberfläche des Launchers läuft über DXVK, Spiele über DXMT.",
+  "symbol": "circle.circle.fill",
+  "tint": "#0070FF",
+  "homepage": "https://ubisoftconnect.com/",
+  "installer": {
+    "url": "https://static3.cdn.ubi.com/orbit/launcher_installer/UbisoftConnectInstaller.exe",
+    "fileName": "UbisoftConnectInstaller.exe",
+    "type": "exe",
+    "arguments": ["/S"],
+    "interactive": false,
+    "approximateSize": 263174264
+  },
+  "prerequisites": ["macos-fonts"],
+  "requiredComponents": ["dxvk-macos-1.10.3-async"],
+  "graphicsBackend": "dxmt",
+  "executableBackends": { "UplayWebCore.exe": "dxvk" },
+  "windowsVersion": "win10",
+  "executable": "C:\\Program Files (x86)\\Ubisoft\\Ubisoft Game Launcher\\UbisoftConnect.exe",
+  "alternativeExecutables": ["C:\\Program Files (x86)\\Ubisoft\\Ubisoft Game Launcher\\upc.exe"],
+  "arguments": [],
+  "environment": { "CEF_DISABLE_SANDBOX": "1" },
+  "experimental": true,
+  "knownIssues": [
+    "Der Launcher aktualisiert sich beim ersten Start selbst und braucht dafür eine Weile.",
+    "Manche Ubisoft-Spiele (z. B. Anno 1800) laufen über DXVK besser – Grafik-Ausnahme für die Spiel-EXE setzen.",
+    "Spiele mit Anti-Cheat im Mehrspielermodus laufen oft nicht."
+  ]
+}

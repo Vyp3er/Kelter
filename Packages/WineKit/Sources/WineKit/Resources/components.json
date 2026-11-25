@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "components": [
+    {
+      "id": "wine-sikarugir-10.0_8",
+      "kind": "wine",
+      "name": "Wine 10.0 (Sikarugir)",
+      "version": "10.0_8",
+      "summary": "Wine 10.0 mit msync und DXMT-Unterstützung. Gepflegt von Gcenx für das Sikarugir-Projekt. Läuft laut Rückmeldungen auch unter macOS 27.",
+      "url": "https://github.com/Sikarugir-App/Engines/releases/download/v1.0/WS12WineSikarugir10.0_8.tar.xz",
+      "sha256": "2a6bcf2a3bf13cddf825599b6bc1e3659cbf71e1282c6d77141a92f6ac8d4c68",
+      "sizeBytes": 166321980,
+      "recommended": true,
+      "features": [
+        "msync",
+        "dxmt"
+      ],
+      "requires": [
+        "sikarugir-runtime-1.0.27"
+      ],
+      "homepage": "https://github.com/Sikarugir-App/Engines",
+      "license": "LGPL-2.1-or-later"
+    },
+    {
+      "id": "wine-sikarugir-11.0_1",
+      "kind": "wine",
+      "name": "Wine 11.0 (Sikarugir)",
+      "version": "11.0_1",
+      "summary": "Wine 11.0 mit msync und DXMT-Unterstützung. Gepflegt von Gcenx für das Sikarugir-Projekt.",
+      "url": "https://github.com/Sikarugir-App/Engines/releases/download/v1.0/WS12WineSikarugir11.0_1.tar.xz",
+      "sha256": "67e29fb3d74f363af39c69ba11f9b13a79812c5db07cf4748672658e4a200a0e",
+      "sizeBytes": 167322744,
+      "recommended": false,
+      "features": [
+        "msync",
+        "dxmt"
+      ],
+      "requires": [
+        "sikarugir-runtime-1.0.27"
+      ],
+      "incompatibleFromMacOS": 27,
+      "knownProblem": "Startet ab macOS 27 außerhalb der Sikarugir-App keine Windows-Programme: Jeder neue Windows-Prozess bricht sofort ab, schon beim Einrichten einer Bottle („failed to start wineboot 1“). Sikarugir behebt das nicht (Issue #295). Nimm Wine 10.0 (Sikarugir).",
+      "homepage": "https://github.com/Sikarugir-App/Engines",
+      "license": "LGPL-2.1-or-later"
+    },
+    {
+      "id": "sikarugir-runtime-1.0.27",
+      "kind": "runtime",
+      "name": "Sikarugir-Bibliotheken 1.0.27",
+      "version": "1.0.27",
+      "summary": "FreeType, GnuTLS, SDL, MoltenVK, GStreamer u. a. aus der Sikarugir-Vorlage, dazu deren DXMT- und DXVK-Builds. Die Sikarugir-Engine braucht sie. Apples D3DMetal aus der Vorlage wird nicht entpackt.",
+      "url": "https://github.com/Sikarugir-App/Template/releases/download/v1.0/Template-1.0.27.tar.xz",
+      "sha256": "dd0778f7b553d63df9b0f4e2cda3f3c6c005aabb75588c84d604afe80cdedbb9",
+      "sizeBytes": 96161660,
+      "recommended": true,
+      "features": [],
+      "extract": [
+        "Template-1.0.27.app/Contents/Frameworks",
+        "Template-1.0.27.app/Contents/Resources/vulkan",
+        "Template-1.0.27.app/Contents/SharedSupport/renderer/dxmt",
+        "Template-1.0.27.app/Contents/SharedSupport/renderer/dxvk",
+        "Template-1.0.27.app/Contents/SharedSupport/renderer/dxvk3",
+        "Template-1.0.27.app/Contents/SharedSupport/renderer/d9vk"
+      ],
+      "homepage": "https://github.com/Sikarugir-App/Template",
+      "license": "verschiedene (LGPL, MIT, Zlib, Apache-2.0)"
+    },
+    {
+      "id": "wine-devel-11.21",
+      "kind": "wine",
+      "name": "Wine 11.21 (WineHQ devel)",
+      "version": "11.21",
+      "summary": "Offizielles WineHQ-Paket (Entwicklungszweig), gebaut von Gcenx. Neuer, aber ohne msync und ohne DXMT-Unterstützung.",
+      "url": "https://github.com/Gcenx/macOS_Wine_builds/releases/download/11.21/wine-devel-11.21-osx64.tar.xz",
+      "sha256": "9909b486657e10ab66c7279371ae1f990345b596b3b1b3a0cf21f28af24fa0ce",
+      "sizeBytes": 225612636,
+      "recommended": false,
+      "features": [],
+      "homepage": "https://github.com/Gcenx/macOS_Wine_builds",
+      "license": "LGPL-2.1-or-later"
+    },
+    {
+      "id": "dxmt-0.80",
+      "kind": "dxmt",
+      "name": "DXMT 0.80",
+      "version": "0.80",
+      "summary": "Direct3D 10/11 → Metal. Nur als Ersatz nötig, falls die Bibliotheken der Engine kein DXMT mitbringen (die Sikarugir-Bibliotheken enthalten es schon).",
+      "url": "https://github.com/3Shain/dxmt/releases/download/v0.80/dxmt-v0.80-builtin.tar.gz",
+      "sha256": "8f260e36b5739e68f3bad613381441385c4dc7b85b78ba8de653d5a6a264529d",
+      "sizeBytes": 18681669,
+      "recommended": false,
+      "features": [],
+      "homepage": "https://github.com/3Shain/dxmt",
+      "license": "MIT"
+    },
+    {
+      "id": "dxvk-macos-1.10.3-async",
+      "kind": "dxvk",
+      "name": "DXVK 1.10.3 für macOS (async)",
+      "version": "1.10.3-20230507",
+      "summary": "Direct3D 9/10/11 → Vulkan → MoltenVK. Für das DXVK-Backend und für Ausnahmen pro Programm (z. B. die Steam-Oberfläche). Katalog-Rezepte laden es automatisch.",
+      "url": "https://github.com/Gcenx/DXVK-macOS/releases/download/v1.10.3-20230507-repack/dxvk-macOS-async-v1.10.3-20230507-repack.tar.gz",
+      "sha256": null,
+      "sizeBytes": 2793443,
+      "recommended": true,
+      "features": [],
+      "homepage": "https://github.com/Gcenx/DXVK-macOS",
+      "license": "Zlib"
+    }
+  ]
+}

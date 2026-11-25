@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "gog-galaxy",
+  "name": "GOG Galaxy",
+  "publisher": "GOG",
+  "category": "Spiele-Plattform",
+  "summary": "Der GOG-Client für Windows – DRM-freie Spiele.",
+  "description": "Startet den offiziellen GOG-Galaxy-Installer in einer eigenen Bottle. Der Installer zeigt Fenster: klick dich einfach durch, Kelter wartet und trägt Galaxy danach unter „Meine Apps“ ein.",
+  "symbol": "circle.hexagongrid.fill",
+  "tint": "#5C2D91",
+  "homepage": "https://www.gog.com/galaxy",
+  "installer": {
+    "url": "https://webinstallers.gog-statics.com/download/GOG_Galaxy_2.0.exe",
+    "fileName": "GOG_Galaxy_2.0.exe",
+    "type": "exe",
+    "arguments": [],
+    "interactive": true
+  },
+  "prerequisites": ["macos-fonts", "vcrun2022-x86"],
+  "requiredComponents": ["dxvk-macos-1.10.3-async"],
+  "graphicsBackend": "dxmt",
+  "executableBackends": { "GalaxyClient Helper.exe": "dxvk" },
+  "windowsVersion": "win10",
+  "executable": "C:\\Program Files (x86)\\GOG Galaxy\\GalaxyClient.exe",
+  "alternativeExecutables": ["C:\\Program Files\\GOG Galaxy\\GalaxyClient.exe"],
+  "arguments": [],
+  "environment": { "CEF_DISABLE_SANDBOX": "1" },
+  "experimental": true,
+  "knownIssues": [
+    "Galaxy 2.0 läuft unter Wine nur eingeschränkt (Anmeldung, Webansichten). GOG-Spiele selbst laufen oft besser als der Client.",
+    "Der Installer lädt Galaxy erst herunter – das Fenster kann eine Weile auf „Herunterladen“ stehen."
+  ]
+}

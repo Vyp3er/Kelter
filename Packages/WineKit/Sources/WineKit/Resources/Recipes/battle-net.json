@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "battle-net",
+  "name": "Battle.net",
+  "publisher": "Blizzard",
+  "category": "Spiele-Plattform",
+  "summary": "Blizzards Launcher für Windows-Spiele.",
+  "description": "Startet den offiziellen Battle.net-Installer in einer eigenen Bottle. Der Installer zeigt Fenster: wähle Sprache und Ordner (Standard lassen) und klick dich durch. Nach der Installation startet Battle.net selbst – Kelter trägt es dann unter „Meine Apps“ ein.",
+  "symbol": "shield.lefthalf.filled",
+  "tint": "#0E86CA",
+  "homepage": "https://download.battle.net/",
+  "installer": {
+    "url": "https://www.battle.net/download/getInstallerForGame?os=win&gameProgram=BATTLENET_APP&version=Live",
+    "fileName": "Battle.net-Setup.exe",
+    "type": "exe",
+    "arguments": [],
+    "interactive": true,
+    "approximateSize": 4700880
+  },
+  "prerequisites": ["macos-fonts"],
+  "requiredComponents": ["dxvk-macos-1.10.3-async"],
+  "graphicsBackend": "dxmt",
+  "executableBackends": { "Battle.net.exe": "dxvk" },
+  "windowsVersion": "win10",
+  "executable": "C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe",
+  "alternativeExecutables": ["C:\\Program Files (x86)\\Battle.net\\Battle.net.exe"],
+  "arguments": [],
+  "environment": { "CEF_DISABLE_SANDBOX": "1" },
+  "experimental": true,
+  "knownIssues": [
+    "Der Installer bleibt unter Wine manchmal bei etwa 25 % stehen. Dann „Alles beenden“ in der Bottle und die Installation neu starten.",
+    "Einige Blizzard-Spiele haben eigene Schutzmechanismen und laufen evtl. nicht."
+  ]
+}

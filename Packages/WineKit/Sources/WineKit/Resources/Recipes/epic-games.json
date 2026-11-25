@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "epic-games",
+  "name": "Epic Games Launcher",
+  "publisher": "Epic Games",
+  "category": "Spiele-Plattform",
+  "summary": "Der Epic-Launcher für Windows, z. B. für Gratisspiele ohne Mac-Version.",
+  "description": "Installiert den offiziellen Epic Games Launcher (MSI-Paket, ca. 250 MB) still in eine eigene Bottle. Der Launcher wird mit „-opengl“ gestartet, das umgeht die häufigsten Darstellungsfehler unter Wine.",
+  "symbol": "bolt.horizontal.fill",
+  "tint": "#2A2A2A",
+  "homepage": "https://store.epicgames.com/download",
+  "installer": {
+    "url": "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi",
+    "fileName": "EpicGamesLauncherInstaller.msi",
+    "type": "msi",
+    "arguments": ["/qn"],
+    "interactive": false,
+    "approximateSize": 264237056
+  },
+  "prerequisites": ["macos-fonts"],
+  "requiredComponents": ["dxvk-macos-1.10.3-async"],
+  "graphicsBackend": "dxmt",
+  "executableBackends": { "EpicWebHelper.exe": "dxvk" },
+  "windowsVersion": "win10",
+  "executable": "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe",
+  "alternativeExecutables": [
+    "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe",
+    "C:\\Program Files\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"
+  ],
+  "arguments": ["-opengl", "-SkipBuildPatchPrereq"],
+  "environment": { "CEF_DISABLE_SANDBOX": "1" },
+  "knownIssues": [
+    "Der Launcher ist unter Wine oft träge, und die Anmeldung kann mehrere Versuche brauchen.",
+    "Viele Epic-Spiele nutzen Easy Anti-Cheat und laufen deshalb nicht."
+  ]
+}

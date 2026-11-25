@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "steam",
+  "name": "Steam",
+  "publisher": "Valve",
+  "category": "Spiele-Plattform",
+  "summary": "Die Windows-Version von Steam – für Spiele ohne Mac-Version.",
+  "description": "Installiert den offiziellen Steam-Client für Windows in eine eigene Bottle. Spiele installierst und startest du danach wie gewohnt in Steam. Die Steam-Oberfläche (steamwebhelper) läuft über DXVK, Spiele über DXMT.",
+  "symbol": "gamecontroller.fill",
+  "tint": "#1B2838",
+  "homepage": "https://store.steampowered.com/about/",
+  "installer": {
+    "url": "https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe",
+    "fileName": "SteamSetup.exe",
+    "type": "exe",
+    "arguments": ["/S"],
+    "interactive": false,
+    "approximateSize": 2380800
+  },
+  "prerequisites": ["macos-fonts"],
+  "requiredComponents": ["dxvk-macos-1.10.3-async"],
+  "graphicsBackend": "dxmt",
+  "executableBackends": { "steamwebhelper.exe": "dxvk" },
+  "windowsVersion": "win10",
+  "executable": "C:\\Program Files (x86)\\Steam\\steam.exe",
+  "alternativeExecutables": ["C:\\Program Files\\Steam\\steam.exe"],
+  "arguments": [],
+  "environment": { "STEAM_DISABLE_CEF_SANDBOX": "1", "CEF_DISABLE_SANDBOX": "1" },
+  "knownIssues": [
+    "Beim ersten Start lädt Steam ein Update (mehrere hundert MB) und startet sich neu. Das dauert ein paar Minuten – Kelter zeigt Steam in dieser Zeit trotzdem als „läuft“.",
+    "Bleibt das Steam-Fenster schwarz: Steam beenden und neu starten. Hilft das nicht, in Steam unter Einstellungen → Oberfläche „GPU-beschleunigtes Rendern in Webansichten“ ausschalten.",
+    "Spiele mit Kernel-Anti-Cheat (z. B. viele Online-Shooter mit Easy Anti-Cheat oder BattlEye) laufen unter Wine auf dem Mac nicht. Kelter zeigt das im Log an.",
+    "Ab der macOS-27.3-Beta wurde ein „Transport Error 0x3008“ beim Start gemeldet. Dafür gibt es noch keine Lösung in Wine."
+  ]
+}

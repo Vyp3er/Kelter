@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "ea-app",
+  "name": "EA app",
+  "publisher": "Electronic Arts",
+  "category": "Spiele-Plattform",
+  "summary": "EAs Launcher für Windows-Spiele.",
+  "description": "Startet den offiziellen Installer der EA app in einer eigenen Bottle. Der Installer zeigt Fenster: klick dich durch, Kelter trägt die App danach ein. Die EA app läuft unter Wine auf dem Mac nur eingeschränkt.",
+  "symbol": "e.circle.fill",
+  "tint": "#FF4747",
+  "homepage": "https://www.ea.com/ea-app",
+  "installer": {
+    "url": "https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EAappInstaller.exe",
+    "fileName": "EAappInstaller.exe",
+    "type": "exe",
+    "arguments": [],
+    "interactive": true,
+    "approximateSize": 2141208
+  },
+  "prerequisites": ["macos-fonts", "vcrun2022-x64"],
+  "requiredComponents": ["dxvk-macos-1.10.3-async"],
+  "graphicsBackend": "dxmt",
+  "executableBackends": { "EADesktop.exe": "dxvk", "QtWebEngineProcess.exe": "dxvk" },
+  "windowsVersion": "win10",
+  "executable": "C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EADesktop.exe",
+  "alternativeExecutables": ["C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EALauncher.exe"],
+  "arguments": [],
+  "environment": { "QTWEBENGINE_DISABLE_SANDBOX": "1" },
+  "experimental": true,
+  "knownIssues": [
+    "Die EA app ist unter Wine bekannt unzuverlässig (Anmeldung, Hintergrunddienst). Rechne damit, dass sie nicht startet.",
+    "Viele aktuelle EA-Spiele nutzen „EA Javelin“-Anti-Cheat und laufen deshalb grundsätzlich nicht."
+  ]
+}
